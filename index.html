@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toko Online Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #007bff, #d3d3d3);
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2em;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .product {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1em;
+      margin-bottom: 2em;
+    }
+
+    .product img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+    }
+
+    .btn-beli {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 0.7em 1.2em;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.8);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      margin-top: 1em;
+    }
+
+    .btn-beli:hover {
+      box-shadow: 0 0 15px rgba(0, 123, 255, 1);
+      transform: scale(1.05);
+    }
+
+    .qr-image {
+      max-width: 300px;
+      margin: 1em 0 0.3em;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .qr-label {
+      font-weight: 900;
+      font-size: 1.2em;
+      margin-top: 0.5em;
+      color: #000;
+      letter-spacing: 0.5px;
+    }
+
+    form {
+      margin-top: 1em;
+    }
+
+    input[type="text"],
+    input[type="file"] {
+      padding: 0.5em;
+      margin: 0.5em 0;
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #ffc107;
+      color: #000;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Toko Online Sederhana</h1>
+</header>
+
+<div class="container">
+  <!-- Produk -->
+  <div class="product">
+    <h2>Produk 1</h2>
+    <img src="https://via.placeholder.com/300x200" alt="Produk 1" />
+    <p>Harga: Rp 100.000</p>
+    <a href="#form-pembayaran" class="btn-beli">Beli Sekarang</a>
+  </div>
+
+  <div class="product">
+    <h2>Produk 2</h2>
+    <img src="https://via.placeholder.com/300x200" alt="Produk 2" />
+    <p>Harga: Rp 150.000</p>
+    <a href="#form-pembayaran" class="btn-beli">Beli Sekarang</a>
+  </div>
+
+  <!-- Pembayaran -->
+  <h3>Pembayaran via QRIS</h3>
+  <img 
+    src="https://cdn.alands.xyz/files/6842216c6136dea733f6cfee?&filename=1749164396306.jpeg" 
+    alt="QRIS" 
+    class="qr-image">
+  <div class="qr-label">QRIS ALLPAY</div>
+  <p>Silakan scan QR di atas menggunakan aplikasi DANA, OVO, ShopeePay, dll.</p>
+
+  <!-- Form Konfirmasi -->
+  <h3 id="form-pembayaran">Konfirmasi Pembayaran</h3>
+  <form action="#" method="post" enctype="multipart/form-data">
+    <input type="text" name="nama" placeholder="Nama Anda" required><br>
+    <input type="text" name="wa" placeholder="Nomor WhatsApp" required><br>
+    <label for="bukti">Upload Bukti Transfer (gambar):</label><br>
+    <input type="file" id="bukti" name="bukti" accept="image/*" required><br><br>
+    <button type="submit">Kirim Bukti Pembayaran</button>
+  </form>
+</div>
+
+<!-- Tombol WhatsApp -->
+<a href="https://wa.me/6281234567890?text=Halo%20admin,%20saya%20sudah%20melakukan%20pembayaran." class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+</body>
+</html>
